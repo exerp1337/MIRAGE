@@ -17,6 +17,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    
+    // 3. Логика мобильного бургер-меню (НОВОЕ)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if(menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // Переключаем класс активности для меню
+            navLinks.classList.toggle('nav-active');
+            
+            // Меняем иконку (бургер на крестик и обратно)
+            const icon = menuToggle.querySelector('i');
+            if(navLinks.classList.contains('nav-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Закрываем меню при клике на любую ссылку внутри него
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 768) {
+                    navLinks.classList.remove('nav-active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
 });
 
 function createParticle(container) {
