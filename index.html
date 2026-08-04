@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRAGE | Премиальное Рекламное Агентство</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключение премиальных шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Фоновое изображение и затемнение заданы в CSS -->
+    <div class="bg-overlay"></div>
+    
+    <!-- Контейнер для анимации песчинок -->
+    <div id="particles-container"></div>
+
+    <!-- Стеклянное Навигационное Меню -->
+    <nav class="glass-nav">
+        <div class="logo">MIRAGE</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#cases">Кейсы</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Герой Секция -->
+        <section id="home" class="hero-section">
+            <div class="glass-panel hero-card fade-in">
+                <span class="eyebrow">Добро пожаловать в иллюзию</span>
+                <h1 class="hero-title">Создаем оазисы внимания</h1>
+                <p class="hero-subtitle">В мире информационного шума мы воздвигаем миражи, которые невозможно игнорировать. Ваш бренд станет легендой пустоши.</p>
+                <div class="cta-group">
+                    <button class="cta-button primary">Начать проект</button>
+                    <button class="cta-button secondary">Смотреть рил <i class="fa-solid fa-play"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Услуг -->
+        <section id="services" class="services-section">
+            <div class="section-header fade-in">
+                <h2>Наши Искусства</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Карточка 1 -->
+                <div class="glass-panel service-card fade-in stagger-1">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-chess-knight"></i>
+                    </div>
+                    <h3>Стратегия</h3>
+                    <p>Глубинный анализ и прокладка точного маршрута к подсознанию вашей целевой аудитории.</p>
+                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="glass-panel service-card fade-in stagger-2">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Креатив</h3>
+                    <p>Визуальные и смысловые миражи, захватывающие дух и остающиеся в памяти навсегда.</p>
+                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="glass-panel service-card fade-in stagger-3">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3>Премиум Дизайн</h3>
+                    <p>Высококлассный UI/UX и брендинг, отражающий статус и превосходство вашего продукта.</p>
+                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="glass-panel service-card fade-in stagger-4">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Медиабайинг</h3>
+                    <p>Точное размещение посланий для максимального охвата в бескрайней пустыне рынка.</p>
+                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
