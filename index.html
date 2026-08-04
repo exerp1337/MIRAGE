@@ -3,103 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIRAGE | Премиальное Рекламное Агентство</title>
+    <title>MIRAGE | Elite Influencer & Social Agency</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Подключение премиальных шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Фоновое изображение и затемнение заданы в CSS -->
     <div class="bg-overlay"></div>
-    
-    <!-- Контейнер для анимации песчинок -->
     <div id="particles-container"></div>
 
-    <!-- Стеклянное Навигационное Меню -->
+    <!-- Стеклянное Навигационное Меню с МЕГА-МЕНЮ -->
     <nav class="glass-nav">
         <div class="logo">MIRAGE</div>
         <ul class="nav-links">
             <li><a href="#home" class="active">Главная</a></li>
-            <li><a href="#services">Услуги</a></li>
+            
+            <!-- Мега-меню (адаптировано из референса) -->
+            <li class="has-mega-menu">
+                <a href="#services">Услуги <i class="fa-solid fa-chevron-down nav-icon"></i></a>
+                <div class="mega-menu glass-panel">
+                    <div class="mega-menu-grid">
+                        <div class="mega-col">
+                            <h4>Комплексный Social</h4>
+                            <ul>
+                                <li><a href="#">Social Стратегия</a></li>
+                                <li><a href="#">Инфлюенс-Маркетинг</a></li>
+                                <li><a href="#">Студия Контента</a></li>
+                                <li><a href="#">Комьюнити Менеджмент</a></li>
+                                <li><a href="#">TikTok & Reels Маркетинг</a></li>
+                                <li><a href="#">AI Дискавери (Поиск талантов)</a></li>
+                                <li><a href="#" class="view-all">Все услуги &rarr;</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Для Брендов</h4>
+                            <ul>
+                                <li><a href="#">Почему MIRAGE?</a></li>
+                                <li><a href="#cases">Кейсы и Результаты</a></li>
+                                <li><a href="#">Платформа Social AI</a></li>
+                                <li><a href="#">Безопасность Бренда (Brand Safety)</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col featured-card">
+                            <div class="glass-panel inner-card">
+                                <h4>WHITE PAPER: ПРЕДСКАЗУЕМЫЙ SOCIAL ROI</h4>
+                                <p>Узнайте, как поведенческие сигналы превращают инвестиции в социальные сети в измеримый рост бизнеса.</p>
+                                <div class="featured-image-placeholder">
+                                    <i class="fa-solid fa-file-pdf"></i> Скачать отчет
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li><a href="#creators">Креаторы</a></li>
             <li><a href="#cases">Кейсы</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#contact" class="nav-cta">Связаться &rarr;</a></li>
         </ul>
         <div class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
 
-    <!-- Основной контент -->
     <main>
         <!-- Герой Секция -->
         <section id="home" class="hero-section">
             <div class="glass-panel hero-card fade-in">
-                <span class="eyebrow">Добро пожаловать в иллюзию</span>
-                <h1 class="hero-title">Создаем оазисы внимания</h1>
-                <p class="hero-subtitle">В мире информационного шума мы воздвигаем миражи, которые невозможно игнорировать. Ваш бренд станет легендой пустоши.</p>
+                <span class="eyebrow"><i class="fa-solid fa-circle-nodes"></i> Глобальный Инфлюенс-Маркетинг</span>
+                <h1 class="hero-title">Создаем Эпицентры Внимания</h1>
+                <p class="hero-subtitle">Креаторы — ваш самый мощный канал. Управляйте им соответственно. Мы объединяем ИИ-аналитику, вирусный креатив и топовых инфлюенсеров для генерации предсказуемого ROI в мире социального шума.</p>
                 <div class="cta-group">
-                    <button class="cta-button primary">Начать проект</button>
-                    <button class="cta-button secondary">Смотреть рил <i class="fa-solid fa-play"></i></button>
+                    <button class="cta-button primary">Запустить кампанию</button>
+                    <button class="cta-button secondary">Смотреть шоурил <i class="fa-solid fa-play"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- Секция Услуг -->
-        <section id="services" class="services-section">
+        <!-- Бегущая строка -->
+        <div class="ticker-section glass-panel fade-in stagger-1">
+            <div class="ticker-wrapper">
+                <div class="ticker-track">
+                    <div class="ticker-item"><span>$1.2T</span> Экономика креаторов</div>
+                    <div class="ticker-item"><span>85B+</span> Просмотров сгенерировано</div>
+                    <div class="ticker-item"><span>34M+</span> Постов проанализировано ИИ</div>
+                    <div class="ticker-item"><span>100%</span> Data-Driven решения</div>
+                    <div class="ticker-item"><span>$1.2T</span> Экономика креаторов</div>
+                    <div class="ticker-item"><span>85B+</span> Просмотров сгенерировано</div>
+                    <div class="ticker-item"><span>34M+</span> Постов проанализировано ИИ</div>
+                    <div class="ticker-item"><span>100%</span> Data-Driven решения</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция: Креаторы (Эксклюзивный Ростер) -->
+        <section id="creators" class="roster-section">
             <div class="section-header fade-in">
-                <h2>Наши Искусства</h2>
+                <h2>Лица Новой Эры</h2>
+                <p class="section-subtitle">Мы не просто закупаем рекламу. Мы формируем альянсы с талантами, чья аудитория доверяет им больше, чем традиционным медиа.</p>
                 <div class="divider"></div>
             </div>
-            
-            <div class="services-grid">
-                <!-- Карточка 1 -->
-                <div class="glass-panel service-card fade-in stagger-1">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-chess-knight"></i>
-                    </div>
-                    <h3>Стратегия</h3>
-                    <p>Глубинный анализ и прокладка точного маршрута к подсознанию вашей целевой аудитории.</p>
-                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
 
-                <!-- Карточка 2 -->
-                <div class="glass-panel service-card fade-in stagger-2">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <div class="creators-grid">
+                <!-- Creator 1 -->
+                <div class="glass-panel creator-card fade-in stagger-1">
+                    <div class="creator-image placeholder-img">
+                        <!-- МЕСТО ПОД ФОТО БЛОГЕРА -->
+                        <span>[Фото Блогера 1]</span>
                     </div>
-                    <h3>Креатив</h3>
-                    <p>Визуальные и смысловые миражи, захватывающие дух и остающиеся в памяти навсегда.</p>
-                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="creator-info">
+                        <h3>[Имя / Никнейм]</h3>
+                        <span class="niche">Tech & Lifestyle</span>
+                        <div class="stats">
+                            <div><strong>[2.5M]</strong><br>Подписчиков</div>
+                            <div><strong>[12%]</strong><br>ER</div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Карточка 3 -->
-                <div class="glass-panel service-card fade-in stagger-3">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-gem"></i>
+                <!-- Creator 2 -->
+                <div class="glass-panel creator-card fade-in stagger-2">
+                    <div class="creator-image placeholder-img">
+                        <!-- МЕСТО ПОД ФОТО БЛОГЕРА -->
+                        <span>[Фото Блогера 2]</span>
                     </div>
-                    <h3>Премиум Дизайн</h3>
-                    <p>Высококлассный UI/UX и брендинг, отражающий статус и превосходство вашего продукта.</p>
-                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="creator-info">
+                        <h3>[Имя / Никнейм]</h3>
+                        <span class="niche">Beauty & Fashion</span>
+                        <div class="stats">
+                            <div><strong>[5.1M]</strong><br>Подписчиков</div>
+                            <div><strong>[8.4%]</strong><br>ER</div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Карточка 4 -->
-                <div class="glass-panel service-card fade-in stagger-4">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-bullseye"></i>
+                <!-- Creator 3 -->
+                <div class="glass-panel creator-card fade-in stagger-3">
+                    <div class="creator-image placeholder-img">
+                        <!-- МЕСТО ПОД ФОТО БЛОГЕРА -->
+                        <span>[Фото Блогера 3]</span>
                     </div>
-                    <h3>Медиабайинг</h3>
-                    <p>Точное размещение посланий для максимального охвата в бескрайней пустыне рынка.</p>
-                    <a href="#" class="learn-more">Подробнее <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="creator-info">
+                        <h3>[Имя / Никнейм]</h3>
+                        <span class="niche">Gaming & eSports</span>
+                        <div class="stats">
+                            <div><strong>[800K]</strong><br>Twitch Avg.</div>
+                            <div><strong>[15%]</strong><br>ER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center fade-in" style="margin-top: 3rem;">
+                <button class="cta-button secondary">Посмотреть весь ростер</button>
+            </div>
+        </section>
+
+        <!-- Секция: Social AI (Наш Мозг) -->
+        <section class="ai-section fade-in">
+            <div class="glass-panel ai-card">
+                <div class="ai-content">
+                    <span class="eyebrow">Технологическое превосходство</span>
+                    <h2>Social AI: Данные вместо догадок</h2>
+                    <p>Наш проприетарный искусственный интеллект анализирует миллионы поведенческих сигналов, комментариев и видеоформатов. Он знает, какой креатор принесет конверсии, а какой — только пустые охваты.</p>
+                    <ul class="ai-features">
+                        <li><i class="fa-solid fa-check"></i> Прогнозирование ROI до старта кампании</li>
+                        <li><i class="fa-solid fa-check"></i> Скоринг безопасности бренда (Brand Safety)</li>
+                        <li><i class="fa-solid fa-check"></i> Анализ ценообразования (защита от переплат)</li>
+                    </ul>
+                </div>
+                <div class="ai-visual placeholder-img">
+                    <!-- МЕСТО ПОД ГРАФИКУ ИЛИ ВИДЕО ИНТЕРФЕЙСА AI -->
+                    <span>[Интерфейс аналитики / 3D графика]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Кейсы -->
+        <section id="cases" class="cases-section">
+            <div class="section-header fade-in">
+                <h2>Превращаем Внимание в Капитал</h2>
+                <p class="section-subtitle">Измеримые результаты для глобальных брендов.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="cases-grid">
+                <!-- Case 1 -->
+                <div class="glass-panel case-card fade-in stagger-1">
+                    <div class="case-brand">
+                        <!-- МЕСТО ПОД ЛОГО БРЕНДА -->
+                        <h3>[Бренд Клиента 1]</h3>
+                    </div>
+                    <p class="case-desc">Глобальный запуск косметической линейки через 150+ макро- и микро-инфлюенсеров.</p>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <h4>[120M]</h4>
+                            <span>Охватов</span>
+                        </div>
+                        <div class="metric">
+                            <h4>[+340%]</h4>
+                            <span>Рост продаж (YoY)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="learn-more">Читать кейс <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Case 2 -->
+                <div class="glass-panel case-card fade-in stagger-2">
+                    <div class="case-brand">
+                        <!-- МЕСТО ПОД ЛОГО БРЕНДА -->
+                        <h3>[Бренд Клиента 2]</h3>
+                    </div>
+                    <p class="case-desc">Установка мобильного приложения через вирусные TikTok-челленджи.</p>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <h4>[2.5M]</h4>
+                            <span>Установок</span>
+                        </div>
+                        <div class="metric">
+                            <h4>[$0.45]</h4>
+                            <span>CPI (Ниже рынка)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="learn-more">Читать кейс <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Подвал / Контакты -->
+    <footer id="contact" class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">MIRAGE</div>
+                <p>Единая операционная модель для социальных медиа, креаторов и коммерции. Превращаем социальный шум в бизнес-результат.</p>
+                <div class="social-links">
+                    <!-- МЕСТО ДЛЯ ССЫЛОК НА СОЦСЕТИ -->
+                    <a href="[Ссылка на Instagram]"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="[Ссылка на LinkedIn]"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="[Ссылка на Telegram]"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="[Ссылка на Twitter]"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#creators">Креаторы</a></li>
+                    <li><a href="#cases">Кейсы</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Готовы создать оазис?</h4>
+                <p>Оставьте заявку, и наша команда свяжется с вами для обсуждения стратегии.</p>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:[Ваш_Email]">[Ваш_Email@mirage.com]</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:[Ваш_Телефон]">[+1 (234) 567-89-00]</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> [Адрес вашего офиса, Город, Страна]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MIRAGE Agency. Все права защищены. | <a href="[Ссылка на политику конфиденциальности]">Политика конфиденциальности</a></p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
