@@ -28,34 +28,39 @@
                 <a href="#services-menu" class="mega-menu-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Услуги <i class="fa-solid fa-chevron-down nav-icon" aria-hidden="true"></i></a>
                 <div class="mega-menu glass-panel" id="services-menu">
                     <div class="mega-menu-grid">
-                        <div class="mega-col">
-                            <h4>Комплексный Social</h4>
-                            <ul>
-                                <li><a href="#">Social Стратегия</a></li>
-                                <li><a href="#">Инфлюенс-Маркетинг</a></li>
-                                <li><a href="#">Студия Контента</a></li>
-                                <li><a href="#">Комьюнити Менеджмент</a></li>
-                                <li><a href="#">TikTok & Reels Маркетинг</a></li>
-                                <li><a href="#">AI Дискавери (Поиск талантов)</a></li>
-                                <li><a href="#" class="view-all">Все услуги &rarr;</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4>Для Брендов</h4>
-                            <ul>
-                                <li><a href="#">Почему MIRAGE?</a></li>
-                                <li><a href="#cases">Кейсы и Результаты</a></li>
-                                <li><a href="#">Платформа Social AI</a></li>
-                                <li><a href="#">Безопасность Бренда (Brand Safety)</a></li>
-                            </ul>
+                        <div class="mega-tabs-panel">
+                            <div class="mega-tabs" role="tablist" aria-label="Категории услуг">
+                                <button type="button" class="mega-tab active" role="tab" aria-selected="true" aria-controls="mega-tabpanel-social" id="mega-tab-social">Комплексный Social</button>
+                                <button type="button" class="mega-tab" role="tab" aria-selected="false" aria-controls="mega-tabpanel-brands" id="mega-tab-brands" tabindex="-1">Для Брендов</button>
+                            </div>
+
+                            <div class="mega-tab-panel active" id="mega-tabpanel-social" role="tabpanel" aria-labelledby="mega-tab-social">
+                                <ul>
+                                    <li><a href="services/social-strategy.html">Social Стратегия</a></li>
+                                    <li><a href="services/influencer-marketing.html">Инфлюенс-Маркетинг</a></li>
+                                    <li><a href="services/content-studio.html">Студия Контента</a></li>
+                                    <li><a href="services/community-management.html">Комьюнити Менеджмент</a></li>
+                                    <li><a href="services/tiktok-reels-marketing.html">TikTok & Reels Маркетинг</a></li>
+                                    <li><a href="services/ai-discovery.html">AI Дискавери (Поиск талантов)</a></li>
+                                    <li><a href="#" class="view-all">Все услуги &rarr;</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-tab-panel" id="mega-tabpanel-brands" role="tabpanel" aria-labelledby="mega-tab-brands" hidden>
+                                <ul>
+                                    <li><a href="brands/why-mirage.html">Почему MIRAGE?</a></li>
+                                    <li><a href="brands/case-studies.html">Кейсы и Результаты</a></li>
+                                    <li><a href="brands/social-ai-platform.html">Платформа Social AI</a></li>
+                                    <li><a href="brands/brand-safety.html">Безопасность Бренда (Brand Safety)</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="mega-col featured-card">
                             <div class="glass-panel inner-card">
                                 <h4>WHITE PAPER: ПРЕДСКАЗУЕМЫЙ SOCIAL ROI</h4>
                                 <p>Узнайте, как поведенческие сигналы превращают инвестиции в социальные сети в измеримый рост бизнеса.</p>
-                                <div class="featured-image-placeholder">
-                                    <i class="fa-solid fa-file-pdf"></i> Скачать отчет
-                                </div>
+                                <a class="featured-image-placeholder" href="assets/MIRAGE-Social-ROI-Whitepaper.pdf" download="MIRAGE-Social-ROI-Whitepaper.pdf">
+                                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Скачать отчет
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +160,7 @@
                 </div>
             </div>
             <div class="text-center fade-in" style="margin-top: 3rem;">
-                <button class="cta-button secondary">Посмотреть весь ростер</button>
+                <button type="button" class="cta-button secondary">Посмотреть весь ростер</button>
             </div>
         </section>
 
@@ -245,7 +250,7 @@
                 <h4>Навигация</h4>
                 <ul>
                     <li><a href="#home">Главная</a></li>
-                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#services-menu">Услуги</a></li>
                     <li><a href="#creators">Креаторы</a></li>
                     <li><a href="#cases">Кейсы</a></li>
                 </ul>

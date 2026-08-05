@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почему MIRAGE? | MIRAGE Agency</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <div id="particles-container"></div>
+
+    <!-- Стеклянное Навигационное Меню -->
+    <nav class="glass-nav">
+        <div class="logo"><a href="../index.html">MIRAGE</a></div>
+
+        <!-- Меню ссылок -->
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="../index.html#home">Главная</a></li>
+
+            <li class="has-mega-menu">
+                <a href="#services-menu" class="mega-menu-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Услуги <i class="fa-solid fa-chevron-down nav-icon" aria-hidden="true"></i></a>
+                <div class="mega-menu glass-panel" id="services-menu">
+                    <div class="mega-menu-grid">
+                        <div class="mega-tabs-panel">
+                            <div class="mega-tabs" role="tablist" aria-label="Категории услуг">
+                                <button type="button" class="mega-tab active" role="tab" aria-selected="true" aria-controls="mega-tabpanel-social" id="mega-tab-social">Комплексный Social</button>
+                                <button type="button" class="mega-tab" role="tab" aria-selected="false" aria-controls="mega-tabpanel-brands" id="mega-tab-brands" tabindex="-1">Для Брендов</button>
+                            </div>
+
+                            <div class="mega-tab-panel active" id="mega-tabpanel-social" role="tabpanel" aria-labelledby="mega-tab-social">
+                                <ul>
+                                    <li><a href="../services/social-strategy.html">Social Стратегия</a></li>
+                                    <li><a href="../services/influencer-marketing.html">Инфлюенс-Маркетинг</a></li>
+                                    <li><a href="../services/content-studio.html">Студия Контента</a></li>
+                                    <li><a href="../services/community-management.html">Комьюнити Менеджмент</a></li>
+                                    <li><a href="../services/tiktok-reels-marketing.html">TikTok & Reels Маркетинг</a></li>
+                                    <li><a href="../services/ai-discovery.html">AI Дискавери (Поиск талантов)</a></li>
+                                    <li><a href="#" class="view-all">Все услуги &rarr;</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-tab-panel" id="mega-tabpanel-brands" role="tabpanel" aria-labelledby="mega-tab-brands" hidden>
+                                <ul>
+                                    <li><a href="why-mirage.html" aria-current="page">Почему MIRAGE?</a></li>
+                                    <li><a href="case-studies.html">Кейсы и Результаты</a></li>
+                                    <li><a href="social-ai-platform.html">Платформа Social AI</a></li>
+                                    <li><a href="brand-safety.html">Безопасность Бренда (Brand Safety)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mega-col featured-card">
+                            <div class="glass-panel inner-card">
+                                <h4>WHITE PAPER: ПРЕДСКАЗУЕМЫЙ SOCIAL ROI</h4>
+                                <p>Узнайте, как поведенческие сигналы превращают инвестиции в социальные сети в измеримый рост бизнеса.</p>
+                                <a class="featured-image-placeholder" href="../assets/MIRAGE-Social-ROI-Whitepaper.pdf" download="MIRAGE-Social-ROI-Whitepaper.pdf">
+                                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Скачать отчет
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="../index.html#creators">Креаторы</a></li>
+            <li><a href="../index.html#cases">Кейсы</a></li>
+            <li><a href="#contact" class="nav-cta">Связаться &rarr;</a></li>
+        </ul>
+
+        <!-- Бургер-меню для мобильных -->
+        <button type="button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="primary-navigation">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </nav>
+
+    <main>
+        <section class="page-hero fade-in">
+            <span class="eyebrow"><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i> Для Брендов</span>
+            <h1>Не агентство. Операционная система для влияния.</h1>
+            <p class="lede">MIRAGE объединяет ИИ-аналитику, проверенных креаторов и данные о поведении аудитории в единый процесс — от выбора инфлюенсера до измеримого роста продаж.</p>
+            <div class="divider"></div>
+        </section>
+
+        <section class="feature-grid">
+            <div class="glass-panel feature-card fade-in stagger-1">
+                <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                <h3>ИИ-подбор креаторов</h3>
+                <p>Сопоставляем бренд с инфлюенсерами по поведенческим сигналам аудитории, а не только по числу подписчиков.</p>
+            </div>
+            <div class="glass-panel feature-card fade-in stagger-2">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                <h3>Предсказуемый ROI</h3>
+                <p>Прогнозируем результат кампании до её запуска — решения на основе данных, а не догадок.</p>
+            </div>
+            <div class="glass-panel feature-card fade-in stagger-3">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <h3>Безопасность бренда</h3>
+                <p>Каждый креатор проходит скоринг безопасности прежде чем попасть в кампанию вашего бренда.</p>
+            </div>
+            <div class="glass-panel feature-card fade-in stagger-1">
+                <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                <h3>Глобальный охват</h3>
+                <p>Сеть талантов в десятках ниш и на ключевых рынках — от tech и beauty до gaming и eSports.</p>
+            </div>
+        </section>
+
+        <section class="page-cta fade-in">
+            <h2>Готовы создать эпицентр внимания?</h2>
+            <p>Оставьте заявку — команда MIRAGE свяжется с вами для обсуждения стратегии.</p>
+            <a href="#contact" class="cta-button primary">Связаться с нами</a>
+        </section>
+    </main>
+
+    <!-- Подвал / Контакты -->
+    <footer id="contact" class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><a href="../index.html">MIRAGE</a></div>
+                <p>Единая операционная модель для социальных медиа, креаторов и коммерции. Превращаем социальный шум в бизнес-результат.</p>
+                <!-- TODO: перед публикацией заменить href="#" на реальные ссылки соцсетей -->
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="../index.html#home">Главная</a></li>
+                    <li><a href="../index.html#services-menu">Услуги</a></li>
+                    <li><a href="../index.html#creators">Креаторы</a></li>
+                    <li><a href="../index.html#cases">Кейсы</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Готовы создать оазис?</h4>
+                <p>Оставьте заявку, и наша команда свяжется с вами для обсуждения стратегии.</p>
+                <!-- TODO: перед публикацией подставить реальные email/телефон/адрес -->
+                <ul>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="#">[Ваш_Email@mirage.com]</a></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="#">[+1 (234) 567-89-00]</a></li>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> [Адрес вашего офиса, Город, Страна]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MIRAGE Agency. Все права защищены. | <a href="#">Политика конфиденциальности</a></p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -74,6 +74,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. Подвкладки внутри мега-меню ("Комплексный Social" / "Для Брендов")
+    const megaTabs = document.querySelectorAll('.mega-tab');
+    megaTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('aria-controls');
+            const targetPanel = document.getElementById(targetId);
+            if (!targetPanel) return;
+
+            megaTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+                t.setAttribute('tabindex', '-1');
+            });
+            document.querySelectorAll('.mega-tab-panel').forEach(panel => {
+                panel.classList.remove('active');
+                panel.hidden = true;
+            });
+
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            targetPanel.classList.add('active');
+            targetPanel.hidden = false;
+        });
+    });
 });
 
 function createParticle(container) {
