@@ -8,10 +8,15 @@
     --accent-gold: #C29B62;        
     --accent-coffee: #4A3320;      
     
-    --glass-bg: rgba(15, 10, 8, 0.45);          
-    --glass-border: rgba(253, 235, 208, 0.12);  
+    --glass-bg: rgba(15, 10, 8, 0.45);
+    --glass-bg-nav: rgba(15, 10, 8, 0.6);
+    --glass-bg-strong: rgba(12, 8, 6, 0.85);
+    --glass-bg-strongest: rgba(12, 8, 6, 0.95);
+    --glass-border: rgba(253, 235, 208, 0.12);
     --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     --glass-highlight: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    --blur-strong: 25px;
+    --blur-base: 20px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,13 +37,13 @@ body {
 }
 
 .bg-overlay {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, rgba(8, 5, 10, 0.85) 0%, rgba(30, 15, 5, 0.75) 100%);
     mix-blend-mode: multiply; z-index: -1;
 }
 
 #particles-container {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; overflow: hidden;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;
 }
 
 .particle {
@@ -63,7 +68,7 @@ body {
     position: fixed; top: 2rem; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1300px;
     height: 70px; display: flex; justify-content: space-between; align-items: center; padding: 0 3rem;
     border-radius: 100px; z-index: 1000;
-    background: rgba(15, 10, 8, 0.6); backdrop-filter: blur(25px); border: 1px solid var(--glass-border);
+    background: var(--glass-bg-nav); backdrop-filter: blur(var(--blur-strong)); -webkit-backdrop-filter: blur(var(--blur-strong)); border: 1px solid var(--glass-border);
 }
 
 .logo {
@@ -90,10 +95,13 @@ body {
 .mega-menu {
     position: absolute; top: 100%; left: -100px; width: 800px; padding: 2.5rem; opacity: 0; visibility: hidden;
     transform: translateY(20px); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); border-radius: 20px;
-    background: rgba(12, 8, 6, 0.85);
+    background: var(--glass-bg-strong);
 }
 .has-mega-menu:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .has-mega-menu:hover .nav-icon { transform: rotate(180deg); }
+/* Открытие по клику (тач-устройства / клавиатура) — дублирует hover-поведение */
+.has-mega-menu .mega-menu.mega-menu-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.has-mega-menu .mega-menu-trigger[aria-expanded="true"] .nav-icon { transform: rotate(180deg); }
 
 .mega-menu-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 2rem; }
 .mega-col h4 {
@@ -117,14 +125,18 @@ body {
 }
 .featured-image-placeholder:hover { background: rgba(212,140,69,0.4); }
 
-.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-cream); }
+.menu-toggle {
+    display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-cream);
+    background: none; border: none; padding: 12px;
+    min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+}
 
 /* === Герой Секция === */
-.hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; }
+.hero-section { min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; }
 .hero-card { max-width: 1000px; padding: 5rem 4rem; text-align: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--accent-amber); font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1.5rem; padding: 8px 16px; border: 1px solid rgba(212, 140, 69, 0.3); border-radius: 50px; background: rgba(212, 140, 69, 0.05); }
-.hero-title { font-family: var(--font-heading); font-size: 4.5rem; line-height: 1.1; font-weight: 700; margin-bottom: 2rem; background: linear-gradient(to right, var(--text-cream), var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-subtitle { font-size: 1.15rem; line-height: 1.6; color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem; font-weight: 300; }
+.hero-title { font-family: var(--font-heading); font-size: clamp(2rem, 6vw + 0.5rem, 4.5rem); line-height: 1.1; font-weight: 700; margin-bottom: 2rem; background: linear-gradient(to right, var(--text-cream), var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem); line-height: 1.6; color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem; font-weight: 300; }
 .cta-group { display: flex; gap: 1.5rem; justify-content: center; }
 .cta-button { font-family: var(--font-body); font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; padding: 1rem 2.5rem; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.4s ease; }
 .cta-button.primary { background: linear-gradient(135deg, var(--accent-amber), #A6652B); color: #fff; border: none; }
@@ -142,13 +154,13 @@ body {
 
 /* === Базовые стили секций === */
 .section-header { text-align: center; margin-bottom: 4rem; }
-.section-header h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--text-cream); margin-bottom: 1rem; }
+.section-header h2 { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw + 0.5rem, 3rem); color: var(--text-cream); margin-bottom: 1rem; }
 .section-subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem; }
 .divider { height: 2px; width: 60px; background: var(--accent-amber); margin: 0 auto; box-shadow: 0 0 10px var(--accent-amber); }
 
 /* === Креаторы (Ростер) === */
 .roster-section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-.creators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+.creators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 2.5rem; }
 .creator-card { padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .creator-card:hover { transform: translateY(-10px); background: rgba(25, 18, 14, 0.6); border-color: rgba(253, 235, 208, 0.3); }
 .creator-image { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1.5rem; border: 2px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); overflow: hidden; }
@@ -162,7 +174,7 @@ body {
 /* === Social AI Секция === */
 .ai-section { padding: 2rem 2rem 6rem; max-width: 1300px; margin: 0 auto; }
 .ai-card { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 4rem; align-items: center; }
-.ai-content h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+.ai-content h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw + 0.5rem, 2.5rem); margin-bottom: 1.5rem; line-height: 1.2; }
 .ai-content p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
 .ai-features { list-style: none; }
 .ai-features li { margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 12px; }
@@ -182,11 +194,11 @@ body {
 .learn-more:hover { gap: 15px; }
 
 /* === Подвал / Контакты === */
-.glass-footer { background: rgba(10, 6, 5, 0.85); backdrop-filter: blur(30px); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 1rem; margin-top: 4rem; }
+.glass-footer { background: var(--glass-bg-strong); backdrop-filter: blur(var(--blur-strong)); -webkit-backdrop-filter: blur(var(--blur-strong)); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 1rem; margin-top: 4rem; }
 .footer-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 4rem; margin-bottom: 3rem; }
 .footer-brand p { color: var(--text-muted); margin: 1.5rem 0; line-height: 1.6; font-size: 0.95rem; max-width: 400px; }
 .social-links { display: flex; gap: 1rem; }
-.social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); color: var(--accent-gold); text-decoration: none; transition: all 0.3s; }
+.social-links a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); color: var(--accent-gold); text-decoration: none; transition: all 0.3s; }
 .social-links a:hover { background: var(--accent-amber); color: #fff; transform: translateY(-3px); }
 .footer-links h4, .footer-contact h4 { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-cream); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
 .footer-links ul, .footer-contact ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
@@ -206,10 +218,28 @@ body {
 /* ========================================= */
 /* === MOBILE RESPONSIVE (Полная адаптация) === */
 /* ========================================= */
+/* Заголовки и hero-subtitle масштабируются через clamp() выше по файлу —
+   отдельные font-size здесь нужны только там, где meняется не размер шрифта. */
 
 @media (max-width: 1024px) {
-    .hero-title { font-size: 3.8rem; }
-    .mega-menu { display: none; } /* Отключаем ховер мега-меню на планшетах */
+    /* На планшетах/мобильных ховер недоступен: мега-меню раскрывается кликом (см. mega-menu-open в JS),
+       поэтому вместо display:none используем нулевую высоту — иначе контент навсегда недостижим для тач-устройств. */
+    .mega-menu {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        padding: 0 1.5rem;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .mega-menu.mega-menu-open {
+        max-height: 1200px;
+        padding: 1.5rem;
+    }
+    .mega-menu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 @media (max-width: 992px) {
@@ -225,57 +255,88 @@ body {
         background-attachment: scroll;
     }
 
+    /* Стекломорфизм на мобильных: снижаем радиус блюра — главный фактор GPU-нагрузки
+       при большом числе наложенных .glass-panel на слабых мобильных чипах. */
+    .glass-panel,
+    .glass-nav,
+    .nav-links,
+    .mega-menu,
+    .glass-footer {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
     .glass-nav { padding: 0 1.5rem; top: 1rem; width: 95%; }
-    
+
     /* Стили выезжающего мобильного меню */
-    .nav-links { 
+    .nav-links {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 80px;
         left: 0;
         width: 100%;
-        background: rgba(12, 8, 6, 0.95);
-        backdrop-filter: blur(25px);
+        background: var(--glass-bg-strongest);
         padding: 2rem;
         border-radius: 16px;
         border: 1px solid var(--glass-border);
-        gap: 1.5rem;
-        align-items: flex-start;
-        
+        gap: 0.5rem;
+        align-items: stretch;
+        max-height: calc(100dvh - 100px);
+        overflow-y: auto;
+
         /* Анимация скрытия/показа */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     }
-    
+
     .nav-links.nav-active {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
 
-    .nav-links > li > a { padding: 10px 0; font-size: 1.1rem; }
-    
-    .menu-toggle { display: block; }
-    
-    .hero-title { font-size: 2.5rem; }
+    /* Тач-таргеты >= 44px по высоте */
+    .nav-links > li > a {
+        padding: 12px 4px;
+        font-size: 1.1rem;
+        min-height: 44px;
+        width: 100%;
+    }
+    .nav-links > li { width: 100%; }
+
+    .menu-toggle { display: flex; }
+
     .hero-card { padding: 3rem 1.5rem; }
     .cta-group { flex-direction: column; gap: 1rem; }
-    
-    .section-header h2 { font-size: 2.2rem; }
+    .cta-button { min-height: 44px; }
+
     .section-header { margin-bottom: 2.5rem; }
-    
+
     .ticker-item { padding: 0 1.5rem; font-size: 0.9rem; }
     .ticker-item span { font-size: 1.2rem; margin-right: 8px; }
-    
+
     .roster-section, .ai-section, .cases-section { padding: 3rem 1.5rem; }
     .creator-card { padding: 1.5rem; }
+    /* .creators-grid уже безопасен на любой ширине благодаря minmax(min(300px, 100%), 1fr) выше */
 }
 
 @media (max-width: 480px) {
-    .hero-title { font-size: 2rem; }
     .eyebrow { font-size: 0.75rem; letter-spacing: 2px; }
-    .hero-subtitle { font-size: 1rem; }
+}
+
+/* Уважаем настройку пользователя "меньше движения": отключаем декоративные анимации */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-in { animation: none; opacity: 1; transform: none; }
+    .ticker-track { animation: none; }
+    .particle { animation: none; display: none; }
+    .creator-card,
+    .cta-button.primary,
+    .cta-button.secondary,
+    .social-links a {
+        transition: none;
+    }
 }

@@ -21,12 +21,12 @@
         <div class="logo">MIRAGE</div>
         
         <!-- Меню ссылок -->
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="#home" class="active">Главная</a></li>
-            
+
             <li class="has-mega-menu">
-                <a href="#services">Услуги <i class="fa-solid fa-chevron-down nav-icon"></i></a>
-                <div class="mega-menu glass-panel">
+                <a href="#services-menu" class="mega-menu-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Услуги <i class="fa-solid fa-chevron-down nav-icon" aria-hidden="true"></i></a>
+                <div class="mega-menu glass-panel" id="services-menu">
                     <div class="mega-menu-grid">
                         <div class="mega-col">
                             <h4>Комплексный Social</h4>
@@ -68,9 +68,9 @@
         </ul>
         
         <!-- Бургер-меню для мобильных -->
-        <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <button type="button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="primary-navigation">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
     </nav>
 
     <main>
@@ -81,8 +81,8 @@
                 <h1 class="hero-title">Создаем Эпицентры Внимания</h1>
                 <p class="hero-subtitle">Креаторы — ваш самый мощный канал. Управляйте им соответственно. Мы объединяем ИИ-аналитику, вирусный креатив и топовых инфлюенсеров для генерации предсказуемого ROI в мире социального шума.</p>
                 <div class="cta-group">
-                    <button class="cta-button primary">Запустить кампанию</button>
-                    <button class="cta-button secondary">Смотреть шоурил <i class="fa-solid fa-play"></i></button>
+                    <button type="button" class="cta-button primary">Запустить кампанию</button>
+                    <button type="button" class="cta-button secondary">Смотреть шоурил <i class="fa-solid fa-play" aria-hidden="true"></i></button>
                 </div>
             </div>
         </section>
@@ -232,11 +232,12 @@
             <div class="footer-brand">
                 <div class="logo">MIRAGE</div>
                 <p>Единая операционная модель для социальных медиа, креаторов и коммерции. Превращаем социальный шум в бизнес-результат.</p>
+                <!-- TODO: перед публикацией заменить href="#" на реальные ссылки соцсетей -->
                 <div class="social-links">
-                    <a href="[Ссылка на Instagram]"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="[Ссылка на LinkedIn]"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="[Ссылка на Telegram]"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="[Ссылка на Twitter]"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
             
@@ -253,15 +254,16 @@
             <div class="footer-contact">
                 <h4>Готовы создать оазис?</h4>
                 <p>Оставьте заявку, и наша команда свяжется с вами для обсуждения стратегии.</p>
+                <!-- TODO: перед публикацией подставить реальные email/телефон/адрес -->
                 <ul>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:[Ваш_Email]">[Ваш_Email@mirage.com]</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="tel:[Ваш_Телефон]">[+1 (234) 567-89-00]</a></li>
-                    <li><i class="fa-solid fa-location-dot"></i> [Адрес вашего офиса, Город, Страна]</li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="#">[Ваш_Email@mirage.com]</a></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="#">[+1 (234) 567-89-00]</a></li>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> [Адрес вашего офиса, Город, Страна]</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 MIRAGE Agency. Все права защищены. | <a href="[Ссылка на политику конфиденциальности]">Политика конфиденциальности</a></p>
+            <p>&copy; 2026 MIRAGE Agency. Все права защищены. | <a href="#">Политика конфиденциальности</a></p>
         </div>
     </footer>
 
