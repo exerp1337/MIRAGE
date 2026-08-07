@@ -182,7 +182,7 @@ body {
 /* === Креаторы (Ростер) === */
 .roster-section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
 .creators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 2.5rem; }
-.creator-card { padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.creator-card { padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; }
 .creator-card:hover { transform: translateY(-10px); background: rgba(25, 18, 14, 0.6); border-color: rgba(253, 235, 208, 0.3); }
 .creator-image { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1.5rem; border: 2px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); overflow: hidden; }
 .creator-image span { font-size: 0.8rem; color: var(--text-muted); opacity: 0.5; }
